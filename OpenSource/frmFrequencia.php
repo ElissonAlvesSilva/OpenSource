@@ -38,7 +38,7 @@
             <h1 class="hidden-xs hidden-sm">BFE</h1>
             <ul>
                 <li class="link active">
-                    <a href="frmPrincipal.php" >
+                    <a href="frmProfessorPrincipal.php" >
                         <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
                         <span class="hidden-sm hidden-xs">Principal</span>
                     </a>
@@ -46,11 +46,11 @@
                 <li class="link">
                     <a href="#collapse-aluno" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
-                        <span class="hidden-sm hidden-xs">Frequência</span>
+                        <span class="hidden-sm hidden-xs">FrequÃªncia</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-aluno">
-                        <li><a href="frmFrequencia.php">Gerar Frequência</a></li>
+                        <li><a href="frmFrequencia.php">Gerar FrequÃªncia</a></li>
                     </ul>
                 </li>
             </ul>
@@ -88,13 +88,13 @@
 
             <div id="content">
                 <header>
-                    <h2 class="page_title">Carregar Frequência</h2>
+                    <h2 class="page_title">Carregar FrequÃªncia</h2>
                 </header>
                 <div class="content-inner">
                     <div class="form form-wrapper">
                         <form class="form form-horizontal" method="post" name="form" enctype="multipart/form-data">
                             <div class="form-group col-xs-2 col-md-2" style="margin-right: 1000px">
-                                <label for="date_freq" class="label label-message">Data da Frequência</label>
+                                <label for="date_freq" class="label label-message">Data da FrequÃªncia</label>
                                 <input type="text"  class="form-control" id="date_freq" required name="date_criacao" value="<?php echo date('d/m/Y')?>">
                             </div>
                             <div class="form-group col-xs-4 col-md-4">
@@ -103,7 +103,7 @@
                             </div>
 
                             <div class="clearfix">
-                                <button type="submit" style="margin-top: 20px" class="btn btn-primary pull-right"> <span class="glyphicon glyphicon-plus"></span> Gerar Frequência</button>
+                                <button type="submit" style="margin-top: 20px" class="btn btn-primary pull-right"> <span class="glyphicon glyphicon-plus"></span> Gerar Frequï¿½ncia</button>
                             </div>
                             <input type="hidden" name="cadastrar">
                         </form>
