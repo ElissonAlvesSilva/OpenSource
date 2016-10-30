@@ -1,0 +1,15 @@
+{
+    "require": {
+        "symfony/var-dumper": "^3.1",
+        "twbs/bootstrap": "^3.3"
+    },
+    "autoload":
+    {
+        "psr-4":
+        {
+            "Frequencia\\Interfaces\\" : "Frequencia/Interfaces",
+            "Frequencia\\Models\\" : "Frequencia/Models",
+            "DB\\Database\\" : "DB/Database"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.label-detail{
+    font-weight: 100;
+}
+.data{
+    margin-top: -5px;
+}
+
+.line-detail{
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid silver;
+    padding-top: 60px;
+    margin-bottom: 15px;
+}
+.line-detail-2{
+    height: 1px;
+    width: 100%;
+    border-bottom: 1px solid silver;
+    margin-bottom: 15px;
+}
