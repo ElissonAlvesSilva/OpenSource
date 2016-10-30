@@ -147,7 +147,7 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
 
                             </div>
                             <div class="form-group col-xs-6 col-md-6">
-                                <label class="label-detail">Nome da Mãe</label>
+                                <label class="label-detail">Nome da M?e</label>
                                 <?php
                                 if(empty($professor->Nome_Mae))
                                     echo '<p class="data">Nome Não Informado</p>';
@@ -157,10 +157,10 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
 
                             </div>
                             <div class="form-group col-xs-12 col-md-12">
-                                <label class="label-detail">Endereço</label>
+                                <label class="label-detail">Endere?o</label>
                                 <?php
                                 if(empty($professor->Endereco))
-                                    echo '<p class="data">Endereço não Informado</p>';
+                                    echo '<p class="data">Endere?o não Informado</p>';
                                 else
                                     echo '<p class="data">'.$professor->Endereco.'</p>';
                                 ?>
@@ -269,7 +269,7 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                     "sFirst":    "Primeiro",
                     "sPrevious": "Anterior",
                     "sNext":     "Próximo",
-                    "sLast":     "Último"
+                    "sLast":     "?ltimo"
                 }
             }
         });

@@ -13,8 +13,9 @@
 
     <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/default.css" rel="stylesheet">
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/jquery.js"></script>
 </head>
 <body>
 
@@ -25,7 +26,7 @@
             <h1 class="hidden-xs hidden-sm">BFE</h1>
             <ul>
                 <li class="link active">
-                    <a href="frmPrincipal.php" >
+                    <a href="frmAlunoPrincipal.php" >
                         <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
                         <span class="hidden-sm hidden-xs">Principal</span>
                     </a>
@@ -33,11 +34,11 @@
                 <li class="link">
                     <a href="#collapse-aluno" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
-                        <span class="hidden-sm hidden-xs">Matérias</span>
+                        <span class="hidden-sm hidden-xs">Matï¿½rias</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-aluno">
-                        <li><a href="frmListMateriasAluno.php">Listar Matérias</a></li>
+                        <li><a href="frmListMateriasAluno.php">Listar Matï¿½rias</a></li>
                     </ul>
                 </li>
                 <?php
@@ -47,7 +48,7 @@
                      <li class="link">
                         <a href="#collapse-matricula" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-globe"></span>
-                            <span class="hidden-sm hidden-xs">Matrícula Online</span>
+                            <span class="hidden-sm hidden-xs">Matrï¿½cula Online</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-matricula">
@@ -104,9 +105,6 @@
     </div>
 
 </div>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="js/default.js"></script>
 </body>

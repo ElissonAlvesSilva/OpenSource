@@ -46,7 +46,7 @@ $aluno = $al->findByType('RA',$_SESSION['idRA']);
                 <h1 class="hidden-xs hidden-sm">BFE</h1>
                 <ul>
                     <li class="link active">
-                        <a href="frmPrincipal.php" >
+                        <a href="frmAlunoPrincipal.php" >
                             <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
                             <span class="hidden-sm hidden-xs">Principal</span>
                         </a>
@@ -54,11 +54,11 @@ $aluno = $al->findByType('RA',$_SESSION['idRA']);
                     <li class="link">
                         <a href="#collapse-aluno" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list-alt"></span>
-                            <span class="hidden-sm hidden-xs">Matérias</span>
+                            <span class="hidden-sm hidden-xs">MatÃ©rias</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-aluno">
-                            <li><a href="frmListMateriasAluno.php">Listar Matérias</a></li>
+                            <li><a href="frmListMateriasAluno.php">Listar Matï¿½rias</a></li>
                         </ul>
                     </li>
                     <?php
@@ -68,7 +68,7 @@ $aluno = $al->findByType('RA',$_SESSION['idRA']);
                      <li class="link">
                         <a href="#collapse-matricula" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-globe"></span>
-                            <span class="hidden-sm hidden-xs">Matrícula Online</span>
+                            <span class="hidden-sm hidden-xs">MatrÃ­cula Online</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-matricula">
@@ -117,7 +117,7 @@ $aluno = $al->findByType('RA',$_SESSION['idRA']);
 
                 <div id="content">
                     <header>
-                        <h2 class="page_title">Matrícula</h2>
+                        <h2 class="page_title">MatrÃ­cula</h2>
                     </header>
                     <div class="content-inner">
                         <div class="form form-wrapper">

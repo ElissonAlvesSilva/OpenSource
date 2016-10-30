@@ -1,7 +1,7 @@
 <?php @ob_start();session_start();require "config/config.php";?>
 <?php
-$aluno = new \Frequencia\Models\Aluno;
-$aluno = $aluno->findByType('RA',$_SESSION['idRA']);
+$professor = new \Frequencia\Models\Professor;
+$professor = $professor->findByType('RA',$_SESSION['idRA']);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,8 +13,9 @@ $aluno = $aluno->findByType('RA',$_SESSION['idRA']);
 
     <link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/default.css" rel="stylesheet">
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/jquery.js"></script>
 </head>
 <body>
 
@@ -25,7 +26,7 @@ $aluno = $aluno->findByType('RA',$_SESSION['idRA']);
             <h1 class="hidden-xs hidden-sm">BFE</h1>
             <ul>
                 <li class="link active">
-                    <a href="frmPrincipal.php" >
+                    <a href="frmProfessorPrincipal.php" >
                         <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
                         <span class="hidden-sm hidden-xs">Principal</span>
                     </a>
