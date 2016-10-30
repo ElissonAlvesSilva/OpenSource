@@ -34,11 +34,11 @@
                 <li class="link">
                     <a href="#collapse-aluno" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
-                        <span class="hidden-sm hidden-xs">Matï¿½rias</span>
+                        <span class="hidden-sm hidden-xs">Matérias</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-aluno">
-                        <li><a href="frmListMateriasAluno.php">Listar Matï¿½rias</a></li>
+                        <li><a href="frmListMateriasAluno.php">Listar Matérias</a></li>
                     </ul>
                 </li>
                 <?php
@@ -48,7 +48,7 @@
                      <li class="link">
                         <a href="#collapse-matricula" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-globe"></span>
-                            <span class="hidden-sm hidden-xs">Matrï¿½cula Online</span>
+                            <span class="hidden-sm hidden-xs">Matrícula Online</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-matricula">

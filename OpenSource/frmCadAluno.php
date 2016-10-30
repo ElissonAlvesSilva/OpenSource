@@ -103,7 +103,7 @@
                 <li class="link">
                     <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
-                        <span class="hidden-sm hidden-xs">Frequência</span>
+                        <span class="hidden-sm hidden-xs">Frequ?ncia</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-frequencia">
@@ -116,7 +116,7 @@
                 <li class="link">
                     <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list"></span>
-                        <span class="hidden-sm hidden-xs">Relatórios</span>
+                        <span class="hidden-sm hidden-xs">Relat?rios</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-report">
@@ -174,7 +174,7 @@
                             </div>
                             <div class="form-group col-xs-2 col-md-2"  style="margin-right: 150px">
                                 <label for="id_biometria" class="label label-message">Identificação Biometrica</label>
-                                <input type="text"  class="form-control" id="id_biometria" required name="id_biometria" placeholder="Identificação Biometrica">
+                                <input type="text"  class="form-control" id="id_biometria" required name="id_biometria" placeholder="Identifica??o Biometrica">
                             </div>
                             <div class="form-group col-xs-8 col-md-8" style="margin-right: 200px">
                                 <label for="nome_aluno" class="label label-message">Nome Completo</label>
@@ -199,7 +199,7 @@
                             <br/>
                             <div class="form-group col-xs-8 col-md-8" style="margin-right: 200px">
                                 <label for="nome_aluno" class="label label-message">Endereço</label>
-                                <input type="text"  class="form-control" id="nome_aluno" required name="endereco" placeholder="Endereço Completo">
+                                <input type="text"  class="form-control" id="nome_aluno" required name="endereco" placeholder="Endere?o Completo">
                             </div>
                             <div class="form-group col-md-3 col-xs-3" >
                                 <label class="label label-message">Telefone</label>
@@ -320,7 +320,7 @@
                     <h4 class="modal-title">Mensagem BFE</h4>
                   </div>
                   <div class="modal-body">
-                    <p>Aluno <b><i>'.$_POST['nome'].'</i></b> já está cadastrado no sistema.</p>
+                    <p>Aluno <b><i>'.$_POST['nome'].'</i></b> j? est? cadastrado no sistema.</p>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>

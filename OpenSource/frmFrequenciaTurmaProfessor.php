@@ -89,115 +89,9 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                 </header>
 
             </div>
-
-
             <div id="content">
                 <header>
-                    <h2 class="page_title">Detalhes Professor</h2>
-                </header>
-                <div class="content-inner">
-                    <div class="form form-wrapper">
-                        <form class="form form-horizontal" name="form">
-                            <div class="form-group col-xs-3 col-md-3">
-                                <label class="label-detail">Registro Acadêmico</label>
-                                <?php
-                                if(empty($professor->RA))
-                                    echo '<p class="data">SEM R.A.</p>';
-                                else
-                                    echo '<p class="data">'.$registro->RA.'</p>';
-                                ?>
-                            </div>
-                            <div class="form-group col-xs-6 col-md-6">
-                                <label class="label-detail">Nome Completo</label>
-                                <?php
-                                if(empty($professor->Nome))
-                                    echo '<p class="data">SEM NOME</p>';
-                                else
-                                    echo '<p class="data">'.$professor->Nome.'</p>';
-                                ?>
-                            </div>
-                            <div class="line-detail"></div>
-                            <div class="form-group col-xs-2 col-md-2">
-                                <label class="label-detail">Data de Nascimento</label>
-                                <?php
-                                if(empty($professor->Data_Nascimento))
-                                    echo '<p class="data">Sem Data de Nascimento</p>';
-                                else
-                                    echo '<p class="data">'.(date('d/m/Y',strtotime($professor->Data_Nascimento))).'</p>';
-                                ?>
-                            </div>
-                            <div class="form-group col-xs-2 col-md-2">
-                                <label class="label-detail">RG</label>
-                                <?php
-                                if(empty($professor->RG))
-                                    echo '<p class="data">RG Não Informado</p>';
-                                else
-                                    echo '<p class="data">'.$professor->RG.'</p>';
-                                ?>
-
-                            </div>
-                            <div class="form-group col-xs-3 col-md-3">
-                                <label class="label-detail">CPF</label>
-                                <?php
-                                if(empty($professor->CPF))
-                                    echo '<p class="data">CPF Não Informado</p>';
-                                else
-                                    echo '<p class="data">'.$professor->CPF.'</p>';
-                                ?>
-
-                            </div>
-                            <div class="form-group col-xs-6 col-md-6">
-                                <label class="label-detail">Nome da M?e</label>
-                                <?php
-                                if(empty($professor->Nome_Mae))
-                                    echo '<p class="data">Nome Não Informado</p>';
-                                else
-                                    echo '<p class="data">'.$professor->Nome_Mae.'</p>';
-                                ?>
-
-                            </div>
-                            <div class="form-group col-xs-12 col-md-12">
-                                <label class="label-detail">Endere?o</label>
-                                <?php
-                                if(empty($professor->Endereco))
-                                    echo '<p class="data">Endere?o não Informado</p>';
-                                else
-                                    echo '<p class="data">'.$professor->Endereco.'</p>';
-                                ?>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="line-detail-2"></div>
-                            <div class="form-group col-xs-3 col-md-3">
-                                <label class="label-detail">Telefone</label>
-                                <?php
-                                if(empty($professor->Telefone))
-                                    echo '<p class="data">Telefone Não Informado</p>';
-                                else
-                                    echo '<p class="data">'.$professor->Telefone.'</p>';
-                                ?>
-
-                            </div>
-                            <div class="form-group col-xs-8 col-md-8">
-                                <label class="label-detail">E-mail</label>
-                                <?php
-                                if(empty($professor->Email))
-                                    echo '<p class="data">Email Não Informado</p>';
-                                else
-                                    echo '<p class="data">'.$professor->Email.'</p>';
-                                ?>
-
-                            </div>
-
-
-                            <div class="clearfix"></div>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-            <div id="content">
-                <header>
-                    <h2 class="page_title">Turmas do Aluno</h2>
+                    <h2 class="page_title">Turmas</h2>
                 </header>
                 <div class="content-inner">
                     <div class="form form-wrapper">
@@ -206,6 +100,7 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                             <tr>
                                 <th>Turma</th>
                                 <th>Matéria</th>
+                                <th>Gerar Frequência</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -218,11 +113,14 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                                     $materia = new \Frequencia\Models\Materia;
                                     $materia = $materia->findByType('idMateria',$item->Materia_idMateria);
 
+                                    $frequencia = "frmFrequencia.php?idTurma=".$item->idTurma;
+
                                     echo
                                         '
                                                     <tr>
                                                         <td>'.$item->Codigo.'</td>
                                                         <td>'.$materia->Nome.'</td>
+                                                        <td><a href="'.$frequencia.'" target="_blank"><span class="label label-warning">Gerar Frequência</span></a></td>
                                                        
                                                     </tr>
                                                 ';

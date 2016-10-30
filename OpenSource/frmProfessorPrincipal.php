@@ -38,7 +38,7 @@ $professor = $professor->findByType('RA',$_SESSION['idRA']);
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-frequencia">
-                        <li><a href="frmFrequencia.php">Gerar Frequência</a></li>
+                        <li><a href="frmFrequenciaTurmaProfessor.php">Gerar Frequência</a></li>
                     </ul>
                 </li>
                 <li class="link">
