@@ -197,7 +197,7 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
             </div>
             <div id="content">
                 <header>
-                    <h2 class="page_title">Turmas do Aluno</h2>
+                    <h2 class="page_title">Turmas do Professor</h2>
                 </header>
                 <div class="content-inner">
                     <div class="form form-wrapper">
