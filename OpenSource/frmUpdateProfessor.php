@@ -118,7 +118,7 @@ $RA = $registro->RA+1;
                 <li class="link">
                     <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
-                        <span class="hidden-sm hidden-xs">Frequência</span>
+                        <span class="hidden-sm hidden-xs">Frequ?ncia</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-frequencia">
@@ -131,7 +131,7 @@ $RA = $registro->RA+1;
                 <li class="link">
                     <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list"></span>
-                        <span class="hidden-sm hidden-xs">Relatórios</span>
+                        <span class="hidden-sm hidden-xs">Relat?rios</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-report">
@@ -178,7 +178,7 @@ $RA = $registro->RA+1;
 
             <div id="content">
                 <header>
-                    <h2 class="page_title">Novo Professor</h2>
+                    <h2 class="page_title">Atualizar Professor</h2>
                 </header>
                 <div class="content-inner">
                     <div class="form form-wrapper">
@@ -255,7 +255,7 @@ $RA = $registro->RA+1;
                                 ?>
                             </div>
                             <div class="form-group col-xs-3 col-xs-3" style="margin-right: 30px">
-                                <label for="date" class="label label-message">Data de Admissão</label>
+                                <label for="date" class="label label-message">Data de Admiss?o</label>
                                 <?php
                                 if(empty($professor->Data_Admissao))
                                     echo '<input type="text" class="form-control"  id="date_admissao" maxlength="10" OnKeyPress="formatar('.'##/##/####'.', this)" name="data_admissao" placeholder="dd/mm/aaaa">';

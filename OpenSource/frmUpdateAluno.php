@@ -109,7 +109,7 @@ $RA = $registro->RA+1;
                 <li class="link">
                     <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
-                        <span class="hidden-sm hidden-xs">Frequência</span>
+                        <span class="hidden-sm hidden-xs">Frequ?ncia</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-frequencia">
@@ -122,7 +122,7 @@ $RA = $registro->RA+1;
                 <li class="link">
                     <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list"></span>
-                        <span class="hidden-sm hidden-xs">Relatórios</span>
+                        <span class="hidden-sm hidden-xs">Relat?rios</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-report">
@@ -186,7 +186,7 @@ $RA = $registro->RA+1;
 
                             </div>
                             <div class="form-group col-xs-2 col-md-2"  style="margin-right: 150px">
-                                <label for="id_biometria" class="label label-message">Identificação Biometrica</label>
+                                <label for="id_biometria" class="label label-message">Identifição Biometrica</label>
                                 <?php
                                 if(empty($aluno->idBiometria))
                                     echo '<input type="text"  class="form-control" id="id_biometria" required name="id_biometria" placeholder="Registro Academico">';
@@ -346,7 +346,7 @@ $RA = $registro->RA+1;
                     <p>Dados do Aluno <b><i>'.$_POST['nome'].'</i></b> atualizado com sucesso</p>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal" id="button_update_Aluno">Fechar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="button_update_aluno">Fechar</button>
                   </div>
                 </div><!-- /.modal-content -->
               </div><!-- /.modal-dialog -->

@@ -100,7 +100,7 @@
                 <li class="link">
                     <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
-                        <span class="hidden-sm hidden-xs">Frequência</span>
+                        <span class="hidden-sm hidden-xs">Frequ?ncia</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-frequencia">
@@ -113,7 +113,7 @@
                 <li class="link">
                     <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list"></span>
-                        <span class="hidden-sm hidden-xs">Relatórios</span>
+                        <span class="hidden-sm hidden-xs">Relat?rios</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-report">
@@ -160,7 +160,7 @@
 
             <div id="content">
                 <header>
-                    <h2 class="page_title">Buscar Aluno</h2>
+                    <h2 class="page_title">Buscar Turma</h2>
                 </header>
                 <div class="content-inner">
                     <div class="form form-wrapper">
@@ -170,6 +170,7 @@
                                 <select class="form-control" name="type" id="type" onchange="ativa();">
                                     <option value="0"> --- SELECIONE ---</option>
                                     <option value="1">Código</option>
+                                    <option value="2">Todas</option>
                                 </select>
                             </div>
                             <div class="form-group col-xs-6 col-md-6">
@@ -195,7 +196,7 @@
                         <table id="tableTurma" class="display-table">
                             <thead>
                             <tr>
-                                <th>Codigo</th>
+                                <th>Código</th>
                                 <th>Nome</th>
                                 <th>Professor</th>
                                 <th>Detalhes</th>
@@ -245,7 +246,41 @@
                                         ';
                                     }
 
-                                }else {
+                                }else if($_POST['type'] == 2){
+                                    $class = $t->read();
+                                    foreach ($class as $turma){
+                                        $ma = new \Frequencia\Models\Materia;
+                                        $prof = new \Frequencia\Models\Professor;
+
+                                        $detalhes  = "frmDetalhesTurma.php?id=".$turma->idTurma;
+                                        $alterar = "frmUpdateTurma.php?id=".$turma->idTurma;
+                                        $excluir = "frmExcluirTurma.php?id=".$turma->idTurma;
+
+                                        if($turma->Professor_idProfessor == null)
+                                            $professor_turma = "Sem Professor";
+                                        else if($turma->Professor_idProfessor != null){
+                                            $professor = $prof->findByType('idProfessor',$turma->Professor_idProfessor);
+                                            $professor_turma = $professor->Nome;
+                                        }
+
+
+                                        $materia = $ma->findByType('idMateria',$turma->Materia_idMateria);
+
+
+                                        echo
+                                            '
+                                            <tr>
+                                                <td>'.$turma->Codigo.'</td>
+                                                <td>'.$materia->Nome.'</td>
+                                                <td>'.$professor_turma.'</td>
+                                                <td><a href="'.$detalhes.'"><span class="label label-warning">Detalhes</span></a></td>
+                                                <td><a href="'.$alterar.'"><span class="label label-warning">Alterar</span></a></td>
+                                                <td><a href="'.$excluir.'"><span class="label label-warning">Remover</span></a></td>
+                                            </tr>
+                                        ';
+                                    }
+                                }
+                                else {
 
                                 }
                             }
@@ -299,6 +334,8 @@
         if(x == 1 ){
             document.getElementById('button').style.display = "";
             document.getElementById('filtro').removeAttribute('disabled','disabled');
+        }else if(x==2){
+            document.getElementById('button').style.display = "";
         }else {
             document.getElementById('button').style.display = "none";
             document.getElementById('filtro').setAttribute('disabled','disabled');

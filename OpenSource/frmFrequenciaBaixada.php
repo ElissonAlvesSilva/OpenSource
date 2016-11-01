@@ -43,28 +43,28 @@ $frequencia = $fre->findByAnd('idTurma','Data_Frequencia',$idTurma,$data_frequen
             <h1 class="hidden-xs hidden-sm">BFE</h1>
             <ul>
                 <li class="link active">
-                    <a href="frmPrincipal.php" >
+                    <a href="frmProfessorPrincipal.php" >
                         <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
                         <span class="hidden-sm hidden-xs">Principal</span>
                     </a>
                 </li>
                 <li class="link">
-                    <a href="#collapse-aluno" data-toggle="collapse" aria-controls="collapse-post">
+                    <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
                         <span class="hidden-sm hidden-xs">Frequência</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
-                    <ul class="collapse collapseable" id="collapse-aluno">
+                    <ul class="collapse collapseable" id="collapse-frequencia">
                         <li><a href="frmFrequenciaTurmaProfessor.php">Gerar Frequência</a></li>
                     </ul>
                 </li>
                 <li class="link">
-                    <a href="#collapse-aluno" data-toggle="collapse" aria-controls="collapse-post">
+                    <a href="#collapse-turmas" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-education"></span>
                         <span class="hidden-sm hidden-xs">Turmas</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
-                    <ul class="collapse collapseable" id="collapse-aluno">
+                    <ul class="collapse collapseable" id="collapse-turmas">
                         <li><a href="frmTurmasProf.php">Turmas</a></li>
                     </ul>
                 </li>

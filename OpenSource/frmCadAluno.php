@@ -174,7 +174,7 @@
                             </div>
                             <div class="form-group col-xs-2 col-md-2"  style="margin-right: 150px">
                                 <label for="id_biometria" class="label label-message">Identificação Biometrica</label>
-                                <input type="text"  class="form-control" id="id_biometria" required name="id_biometria" placeholder="Identifica??o Biometrica">
+                                <input type="text"  class="form-control" id="id_biometria" required name="id_biometria" placeholder="Identifição Biometrica">
                             </div>
                             <div class="form-group col-xs-8 col-md-8" style="margin-right: 200px">
                                 <label for="nome_aluno" class="label label-message">Nome Completo</label>

@@ -104,7 +104,7 @@ $materia = $mat->findByType('idMateria',$id);
                 <li class="link">
                     <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
-                        <span class="hidden-sm hidden-xs">Frequência</span>
+                        <span class="hidden-sm hidden-xs">Frequ?ncia</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-frequencia">
@@ -117,7 +117,7 @@ $materia = $mat->findByType('idMateria',$id);
                 <li class="link">
                     <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list"></span>
-                        <span class="hidden-sm hidden-xs">Relatórios</span>
+                        <span class="hidden-sm hidden-xs">Relat?rios</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-report">
@@ -164,7 +164,7 @@ $materia = $mat->findByType('idMateria',$id);
 
             <div id="content">
                 <header>
-                    <h2 class="page_title">Nova Matéria</h2>
+                    <h2 class="page_title">Atualizar Matéria</h2>
                 </header>
                 <div class="content-inner">
                     <div class="form form-wrapper">
@@ -204,7 +204,7 @@ $materia = $mat->findByType('idMateria',$id);
                                 if(empty($materia->Descricao))
                                     echo '<textarea class="form-control" name="descricao" placeholder="Descrição sobre a Matéria"></textarea>';
                                 else
-                                    echo ' <textarea class="form-control" name="descricao" placeholder="Descrição sobre a Matéria">'.$materia->Descricao.'</textarea>'
+                                    echo ' <textarea class="form-control" name="descricao" placeholder="Descri??o sobre a Mat?ria">'.$materia->Descricao.'</textarea>'
                                 ?>
 
                             </div>
@@ -265,7 +265,7 @@ $materia = $mat->findByType('idMateria',$id);
                     <h4 class="modal-title">Mensagem BFE</h4>
                   </div>
                   <div class="modal-body">
-                    <p>Dados da Matéria <b><i>'.$_POST['nome'].'</i></b> atualizado com sucesso</p>
+                    <p>Dados da Mat?ria <b><i>'.$_POST['nome'].'</i></b> atualizado com sucesso</p>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal" id="button_update_materia">Fechar</button>

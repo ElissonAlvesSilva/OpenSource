@@ -38,22 +38,22 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                     </a>
                 </li>
                 <li class="link">
-                    <a href="#collapse-aluno" data-toggle="collapse" aria-controls="collapse-post">
+                    <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
                         <span class="hidden-sm hidden-xs">Frequência</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
-                    <ul class="collapse collapseable" id="collapse-aluno">
+                    <ul class="collapse collapseable" id="collapse-frequencia">
                         <li><a href="frmFrequenciaTurmaProfessor.php">Gerar Frequência</a></li>
                     </ul>
                 </li>
                 <li class="link">
-                    <a href="#collapse-aluno" data-toggle="collapse" aria-controls="collapse-post">
+                    <a href="#collapse-turmas" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-education"></span>
                         <span class="hidden-sm hidden-xs">Turmas</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
-                    <ul class="collapse collapseable" id="collapse-aluno">
+                    <ul class="collapse collapseable" id="collapse-turmas">
                         <li><a href="frmTurmasProf.php">Turmas</a></li>
                     </ul>
                 </li>
@@ -147,7 +147,7 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
 
                             </div>
                             <div class="form-group col-xs-6 col-md-6">
-                                <label class="label-detail">Nome da M?e</label>
+                                <label class="label-detail">Nome da Mãe</label>
                                 <?php
                                 if(empty($professor->Nome_Mae))
                                     echo '<p class="data">Nome Não Informado</p>';
@@ -157,10 +157,10 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
 
                             </div>
                             <div class="form-group col-xs-12 col-md-12">
-                                <label class="label-detail">Endere?o</label>
+                                <label class="label-detail">Endereço</label>
                                 <?php
                                 if(empty($professor->Endereco))
-                                    echo '<p class="data">Endere?o não Informado</p>';
+                                    echo '<p class="data">Endereço não Informado</p>';
                                 else
                                     echo '<p class="data">'.$professor->Endereco.'</p>';
                                 ?>

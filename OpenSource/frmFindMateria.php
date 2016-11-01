@@ -92,7 +92,7 @@
                 <li class="link">
                     <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
-                        <span class="hidden-sm hidden-xs">Frequência</span>
+                        <span class="hidden-sm hidden-xs">Frequ?ncia</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-frequencia">
@@ -105,7 +105,7 @@
                 <li class="link">
                     <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list"></span>
-                        <span class="hidden-sm hidden-xs">Relatórios</span>
+                        <span class="hidden-sm hidden-xs">Relat?rios</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-report">
@@ -162,6 +162,7 @@
                                 <select class="form-control" name="type" id="type" onchange="ativa();">
                                     <option value="0"> --- SELECIONE ---</option>
                                     <option value="1">Nome</option>
+                                    <option value="2">Todas</option>
                                 </select>
                             </div>
                             <div class="form-group col-xs-6 col-md-6">
@@ -222,8 +223,27 @@
                                         ';
                                     }
 
-                                }else {
+                                }else if($_POST['type'] == 2) {
+                                    $matter = $ma->read();
+                                    foreach ($matter as $materia){
 
+                                        $detalhes  = "frmDetalhesMateria.php?id=".$materia->idMateria;
+                                        $alterar = "frmUpdateMateria.php?id=".$materia->idMateria;
+                                        $excluir = "frmExcluirMateria.php?id=".$materia->idMateria;
+
+
+
+                                        echo
+                                            '
+                                            <tr>
+                                                <td>'.$materia->idMateria.'</td>
+                                                <td>'.$materia->Nome.'</td>
+                                                <td><a href="'.$detalhes.'"><span class="label label-warning">Detalhes</span></a></td>
+                                                <td><a href="'.$alterar.'"><span class="label label-warning">Alterar</span></a></td>
+                                                <td><a href="'.$excluir.'"><span class="label label-warning">Remover</span></a></td>
+                                            </tr>
+                                        ';
+                                    }
                                 }
                             }
 
@@ -276,6 +296,8 @@
         if(x == 1 ){
             document.getElementById('button').style.display = "";
             document.getElementById('filtro').removeAttribute('disabled','disabled');
+        }else if(x==2){
+            document.getElementById('button').style.display = "";
         }else {
             document.getElementById('button').style.display = "none";
             document.getElementById('filtro').setAttribute('disabled','disabled');

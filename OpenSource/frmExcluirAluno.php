@@ -105,7 +105,7 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                     <li class="link">
                         <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list-alt"></span>
-                            <span class="hidden-sm hidden-xs">Frequência</span>
+                            <span class="hidden-sm hidden-xs">Frequ?ncia</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-frequencia">
@@ -118,7 +118,7 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                     <li class="link">
                         <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list"></span>
-                            <span class="hidden-sm hidden-xs">Relatórios</span>
+                            <span class="hidden-sm hidden-xs">Relat?rios</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-report">
@@ -182,7 +182,7 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
 
                                 </div>
                                 <div class="form-group col-xs-2 col-md-2"  style="margin-right: 150px">
-                                    <label for="id_biometria" class="label label-message">Identificação Biometrica</label>
+                                    <label for="id_biometria" class="label label-message">Identificão Biometrica</label>
                                     <?php
                                     if(empty($aluno->idBiometria))
                                         echo '<input type="text"  class="form-control" id="id_biometria" required name="id_biometria" placeholder="Registro Academico">';
@@ -233,11 +233,11 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
 if(isset($_POST['delete'])){
     $al = new \Frequencia\Models\Aluno;
     $registro = new \Frequencia\Models\Registro_Academico;
-    $user = new \Frequencia\Models\Usuario;
+    $user = new \Frequencia\Models\Usuario_RM;
 
     $aluno = $al->findByType('idAluno',$id);
 
-    $user->DeleteUser('RA',$aluno->RA);
+    $user->delete('RA',$aluno->RA);
     $registro->delete('idRegistro',$aluno->RA);
     $al->delete('idAluno',$id);
 
