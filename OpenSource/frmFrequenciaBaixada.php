@@ -1,4 +1,18 @@
 <?php @ob_start();session_start();require "config/config.php";?>
+<?php
+date_default_timezone_set('UTC');
+$idTurma = isset($_GET['idTurma'])?$_GET['idTurma']:"";
+$data = isset($_GET['data'])?$_GET['data']:"";
+$date = str_replace('/', '-', $data);
+$data_frequencia = "'".date('Y-m-d', strtotime($date))."'";
+
+$fre = new \Frequencia\Models\Frequencia;
+$mat = new \Frequencia\Models\Materia;
+$turma = new \Frequencia\Models\Turma;
+$turma = $turma->findByType('idTurma',$idTurma);
+$materia = $mat->findByType('idMateria',$turma->Materia_idMateria);
+$frequencia = $fre->findByAnd('idTurma','Data_Frequencia',$idTurma,$data_frequencia);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,20 +27,11 @@
     <link href="css/datepicker.css" rel="stylesheet">
     <script src="js/html5shiv.min.js"></script>
     <script src="js/respond.min.js"></script>
-    <link href="fileInput/css/fileinput.css" rel="stylesheet">
-    <script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/datepicker-pt-BR.js"></script>
-    <script src="js/mask.js"></script>
-    <script>
-        $(function(){
-            $("#date_freq").datepicker({
-                format: 'dd/mm/yyyy',
-                language:"pt-BR"
-            });
-        });
-    </script>
-    <link href="css/modal.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="DataTables/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="DataTables/js/jquery.dataTables.js"></script>
     <link href="css/inputs.css" rel="stylesheet"/>
+    <link href="css/detalhes.css" rel="stylesheet"/>
+    <link href="css/image.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -45,81 +50,24 @@
                 </li>
                 <li class="link">
                     <a href="#collapse-aluno" data-toggle="collapse" aria-controls="collapse-post">
-                        <span class="glyphicon glyphicon-user"></span>
-                        <span class="hidden-sm hidden-xs">Alunos</span>
-                        <span class="pull-right glyphicon glyphicon-menu-down"></span>
-                    </a>
-                    <ul class="collapse collapseable" id="collapse-aluno">
-                        <li><a href="frmCadAluno.php">Cadastrar</a></li>
-                        <li><a href="frmFindAluno.php">Alterar</a></li>
-                        <li><a href="frmFindAluno.php">Pesquisar</a></li>
-                    </ul>
-                </li>
-                <li class="link">
-                    <a href="#collapse-professores" data-toggle="collapse" aria-controls="collapse-post">
-                        <span class="glyphicon glyphicon-education"></span>
-                        <span class="hidden-sm hidden-xs">Professores</span>
-                        <span class="pull-right glyphicon glyphicon-menu-down"></span>
-                    </a>
-                    <ul class="collapse collapseable" id="collapse-professores">
-                        <li><a href="frmCadProfessor.php">Cadastrar</a></li>
-                        <li><a href="frmFindProfessor.php">Alterar</a></li>
-                        <li><a href="frmFindProfessor.php">Pesquisar</a></li>
-                    </ul>
-                </li>
-                <li class="link">
-                    <a href="#collapse-materias" data-toggle="collapse" aria-controls="collapse-post">
-                        <span class="glyphicon glyphicon-blackboard"></span>
-                        <span class="hidden-sm hidden-xs">Matérias</span>
-                        <span class="pull-right glyphicon glyphicon-menu-down"></span>
-                    </a>
-                    <ul class="collapse collapseable" id="collapse-materias">
-                        <li><a href="frmCadMateria.php">Cadastrar</a></li>
-                        <li><a href="frmFindMateria.php">Alterar</a></li>
-                        <li><a href="frmFindMateria.php">Pesquisar</a></li>
-                    </ul>
-                </li>
-                <li class="link">
-                    <a href="#collapse-turmas" data-toggle="collapse" aria-controls="collapse-post">
-                        <span class="glyphicon glyphicon-file"></span>
-                        <span class="hidden-sm hidden-xs">Turmas</span>
-                        <span class="pull-right glyphicon glyphicon-menu-down"></span>
-                    </a>
-                    <ul class="collapse collapseable" id="collapse-turmas">
-                        <li><a href="frmCadTurma.php">Cadastrar</a></li>
-                        <li><a href="frmFindTurma.php">Alterar</a></li>
-                        <li><a href="frmFindTurma.php">Pesquisar</a></li>
-                    </ul>
-                </li>
-                <!--
-                <li class="link">
-                    <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
                         <span class="hidden-sm hidden-xs">Frequência</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
-                    <ul class="collapse collapseable" id="collapse-frequencia">
-                        <li><a href="frmCadFrequencia.php">Cadastrar</a></li>
-                        <li><a href="frmFindFrequencia.php">Alterar</a></li>
-                        <li><a href="frmFindFrequencia.php">Pesquisar</a></li>
+                    <ul class="collapse collapseable" id="collapse-aluno">
+                        <li><a href="frmFrequenciaTurmaProfessor.php">Gerar Frequência</a></li>
                     </ul>
                 </li>
-
                 <li class="link">
-                    <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
-                        <span class="glyphicon glyphicon-list"></span>
-                        <span class="hidden-sm hidden-xs">Relatórios</span>
+                    <a href="#collapse-aluno" data-toggle="collapse" aria-controls="collapse-post">
+                        <span class="glyphicon glyphicon-education"></span>
+                        <span class="hidden-sm hidden-xs">Turmas</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
-                    <ul class="collapse collapseable" id="collapse-report">
-                        <li><a href="">Alunos</a></li>
-                        <li><a href="">Professores</a></li>
-                        <li><a href="">Materias</a></li>
-                        <li><a href="">Turmas</a></li>
+                    <ul class="collapse collapseable" id="collapse-aluno">
+                        <li><a href="frmTurmasProf.php">Turmas</a></li>
                     </ul>
                 </li>
-                -->
-
             </ul>
         </div>
         <!-- My Content Area-->
@@ -155,25 +103,96 @@
 
             <div id="content">
                 <header>
-                    <h2 class="page_title">Carregar Frequência</h2>
+                    <h2 class="page_title">Detalhes da Turma</h2>
                 </header>
                 <div class="content-inner">
                     <div class="form form-wrapper">
-                        <form class="form form-horizontal" method="post" name="form" enctype="multipart/form-data">
-                            <div class="form-group col-xs-2 col-md-2" style="margin-right: 1000px">
-                                <label for="date_freq" class="label label-message">Data da Frequência</label>
-                                <input type="text"  class="form-control" id="date_freq" required name="date_criacao" value="<?php echo date('d/m/Y')?>">
+                        <form class="form form-horizontal">
+                            <div class="form-group col-md-3 col-xs-3">
+                                <label class="label-detail">Código</label>
+                                <?php
+                                if(!empty($turma->Codigo))
+                                    echo '<p class="data">'.$turma->Codigo.'</p>';
+                                ?>
                             </div>
-                            <div class="form-group col-xs-4 col-md-4">
-                                <label for="descricao" class="label label-message">Arquivo Texto</label>
-                                <input type="file" class="file" name="frequencia">
+                            <div class="form-group col-md-5 col-xs-5">
+                                <label class="label-detail">Matéria</label>
+                                <?php
+                                if(!empty($materia->Nome))
+                                    echo '<p class="data">'.$materia->Nome.'</p>';
+                                ?>
                             </div>
 
-                            <div class="clearfix">
-                                <button type="submit" style="margin-top: 20px" class="btn btn-primary pull-right"> <span class="glyphicon glyphicon-plus"></span> Gerar Frequência</button>
+                            <div class="form-group col-xs-4 col-md-4">
+                                <label class="label-detail">Data da Frequência</label>
+                                <?php
+                                    if(!empty($frequencia->Data_Frequencia))
+                                        echo '<p class="data">'.date('d/m/Y',strtotime($frequencia->Data_Frequencia)).'</p>';
+                                ?>
                             </div>
-                            <input type="hidden" name="cadastrar">
+                            <div class="form-group col-xs-4 col-md-4">
+                                <label class="label-detail">Carga Horária</label>
+                                <?php
+                                    if(!empty($materia->Carga_Horaria))
+                                        echo '<p class="data">'.$materia->Carga_Horaria.'</p>';
+                                ?>
+                            </div>
+
+
+
+
+                            <div class="clearfix"></div>
                         </form>
+                    </div>
+
+                </div>
+            </div>
+            <div id="content">
+                <header>
+                    <h2 class="page_title">Frequência</h2>
+                </header>
+                <div class="content-inner">
+                    <div class="form form-wrapper">
+                        <table id="tableFrequencia" class="display-table">
+                            <thead>
+                            <tr>
+                                <th>Aluno</th>
+                                <th>Data da Frequência</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $freq = new \Frequencia\Models\Frequencia;
+                            $frequencia = $freq->findByAndAll('idTurma','Data_Frequencia',$idTurma,$data_frequencia);
+                            foreach ($frequencia as $item){
+                                $aluno = new \Frequencia\Models\Aluno;
+                                $aluno = $aluno->findByType('idAluno',$item->idAluno);
+
+                                if($item->Status == 1)
+                                    $status = '<img class="img-table" src="img/blue.png">';
+                                else if($item->Status == 2)
+                                    $status = '<img class="img-table" src="img/red.png">';
+
+
+                                echo
+                                    '
+                                                    <tr>
+                                                        <td>'.$aluno->Nome.'</td>
+                                                        <td>'.$data.'</td>
+                                                        <td>'.$status.'</td>
+                                                       
+                                                    </tr>
+                                                ';
+                            }
+
+
+
+
+                            ?>
+
+                            </tbody>
+                        </table>
                     </div>
 
                 </div>
@@ -192,7 +211,26 @@
 </div>
 <script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="js/default.js"></script>
-<script src="fileInput/js/fileinput.js"></script>
-<script src="fileInput/js/fileinput.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#tableFrequencia').dataTable({
+            "oLanguage": {
+                "sProcessing": "Aguarde enquanto os dados são carregados ...",
+                "sLengthMenu": "Mostrar _MENU_ registros por pagina",
+                "sZeroRecords": "Nenhum registro correspondente ao criterio encontrado",
+                "sInfoEmpty": "Exibindo 0 a 0 de 0 registros",
+                "sInfo": "Exibindo de _START_ a _END_ de _TOTAL_ registros",
+                "sInfoFiltered": "",
+                "sSearch": "Procurar",
+                "oPaginate": {
+                    "sFirst":    "Primeiro",
+                    "sPrevious": "Anterior",
+                    "sNext":     "Próximo",
+                    "sLast":     "?ltimo"
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>

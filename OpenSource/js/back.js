@@ -43,8 +43,10 @@ $(document).ready(function(){
     $('#button_matricula').click(function (e) {
         window.location.href = "frmAlunoPrincipal.php";
     });
-    $('#button_frequencia').click(function (e) {
-        window.location.href = "frmProfessorPrincipal.php";
+    $('#button_frequencia_turma').click(function (e) {
+        var id = $('#idTurma').val();
+        var data = $('#data_freq').val();
+        window.location.href = "frmFrequenciaBaixada.php?idTurma="+id+"&data="+data;
     });
 
 });

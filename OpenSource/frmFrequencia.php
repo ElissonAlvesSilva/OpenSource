@@ -25,9 +25,10 @@
         <script src="js/bootstrap-datepicker.js"></script>
         <script src="js/datepicker-pt-BR.js"></script>
         <script src="js/mask.js"></script>
+        <script src="js/back.js"></script>
         <script>
             $(function(){
-                $("#date_freq").datepicker({
+                $("#data_freq").datepicker({
                     format: 'dd/mm/yyyy',
                     language:"pt-BR"
                 });
@@ -111,13 +112,14 @@
                     <div class="content-inner">
                         <div class="form form-wrapper">
                             <form class="form form-horizontal" method="post" name="form" enctype="multipart/form-data">
+                                <input type="hidden" id="idTurma" value="<?php echo $id;?>">
                                 <div class="form-group col-xs-3 col-md-3" style="margin-right: 1000px">
                                     <label for="date_freq" class="label label-message">Turma</label>
                                     <input type="text"  class="form-control" id="date_freq" required name="date_criacao" value="<?php echo $turma->Codigo;?>">
                                 </div>
                                 <div class="form-group col-xs-2 col-md-2" style="margin-right: 1000px">
                                     <label for="date_freq" class="label label-message">Data da Frequência</label>
-                                    <input type="text"  class="form-control" id="date_freq" required name="data_criacao" value="<?php echo date('d/m/Y');?>">
+                                    <input type="text"  class="form-control" id="data_freq" required name="data_criacao" value="<?php echo date('d/m/Y');?>">
                                 </div>
 
                                 <div class="form-group col-xs-4 col-md-4">
@@ -158,46 +160,94 @@ if(isset($_POST['cadastrar'])){
 
     $uploadfile = $uploaddir . $_FILES['arquivo']['name'];
 
+    $data = $_POST['data_criacao'];
+    $date = str_replace('/', '-', $data);
+    $data_frequencia = date('Y-m-d', strtotime($date));
+
     if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $uploadfile)){
         $arquivo_texto = file_get_contents($uploadfile);
 
-        $data = $_POST['data_criacao'];
-        $date = str_replace('/', '-', $data);
-        $data_frequencia = date('Y-m-d', strtotime($date));
+
 
         $emails = explode(';', $arquivo_texto);
 
         foreach ($emails as $value) {
-            gerarFrequencia($value,$id,$data_frequencia);
-
+            gerarFrequenciaPresenca($value,$id,$data_frequencia);
         }
-
+        gerarFalta($data_frequencia,$id);
         unlink($uploadfile);
+        echo '
+        <script>
+            $(document).ready(function(){
+                $("#messagemSucess").modal("show");
+            });
+        </script>
+
+        <div class="modal fade" id="messagemSucess" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content modal-window">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Mensagem BFE</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Frequência da data <i>'.$data.'</i> da turma <b><i>'.$turma->Codigo.'</i></b> gerada com sucesso</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="button_frequencia_turma">Fechar</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        ';
 
     }
     else {
         dump('Nao foi Gerada Frequencia');
     }
-
 }
 
-function gerarFrequencia($value,$id,$data_frequencia){
+function gerarFrequenciaPresenca($value,$id,$data_frequencia){
     $frequencia = new \Frequencia\Models\Frequencia;
     $turma = new \Frequencia\Models\Turma_Aluno;
 
     $turma = $turma->findByAndTypeAll('idAluno','idTurma',$value,$id);
 
     foreach ($turma as $item){
-        $frequencia = $frequencia->create(
-            [
-                'idTurma' => $id,
-                'idAluno' => $item->idAluno,
-                'Data_Frequencia' =>$data_frequencia,
-                'Status' => 1
-            ]);
+            $frequencia = $frequencia->create(
+                [
+                    'idTurma' => $id,
+                    'idAluno' => $item->idAluno,
+                    'Data_Frequencia' =>$data_frequencia,
+                    'Status' => 1
+                ]);
     }
-
 }
+
+function gerarFalta($data_frequencia,$id){
+    $freq = new \Frequencia\Models\Frequencia;
+    $turma = new \Frequencia\Models\Turma_Aluno;
+    $turma = $turma->findByTypeAll('idTurma',$id);
+    foreach ($turma as $item){
+
+        $verify_aluno = $freq->findByAnd('idAluno','Data_Frequencia',$item->idAluno,"'".$data_frequencia."'");
+        if($verify_aluno->Status != 1){
+            $freq->create(
+                [
+                    'idTurma' => $id,
+                    'idAluno' => $item->idAluno,
+                    'Data_Frequencia' =>$data_frequencia,
+                    'Status' => 2
+                ]);
+        }
+
+
+
+
+    }
+}
+
+
 
 
 

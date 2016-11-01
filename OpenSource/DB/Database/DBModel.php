@@ -106,6 +106,7 @@ class DBModel implements IModel
             dump($e->getMessage());
         }
     }
+
     public function findByTypeAll($name, $value)
     {
         $query = "SELECT * FROM $this->table WHERE $name = $value";
@@ -261,25 +262,6 @@ class DBModel implements IModel
     public function findByCount($name,$parameter)
     {
         $query = "SELECT COUNT(*) as total FROM $this->table WHERE $name = $parameter";
-
-        $pdo = $this->database->prepare($query);
-
-        try
-        {
-            $pdo->execute();
-
-            return $pdo->fetch();
-
-        }catch (PDOException $e)
-
-        {
-            dump($e->getMessage());
-        }
-    }
-
-    public function CountTotal()
-    {
-        $query = "SELECT COUNT(*) as total FROM $this->table";
 
         $pdo = $this->database->prepare($query);
 
