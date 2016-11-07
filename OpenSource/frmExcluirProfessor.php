@@ -89,7 +89,7 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                     <li class="link">
                         <a href="#collapse-materias" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-blackboard"></span>
-                            <span class="hidden-sm hidden-xs">Matï¿½rias</span>
+                            <span class="hidden-sm hidden-xs">Matérias</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-materias">
@@ -114,7 +114,7 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                     <li class="link">
                         <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list-alt"></span>
-                            <span class="hidden-sm hidden-xs">Frequï¿½ncia</span>
+                            <span class="hidden-sm hidden-xs">Frequ?ncia</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-frequencia">
@@ -127,7 +127,7 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                     <li class="link">
                         <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list"></span>
-                            <span class="hidden-sm hidden-xs">Relatï¿½rios</span>
+                            <span class="hidden-sm hidden-xs">Relat?rios</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-report">
@@ -180,7 +180,7 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                         <div class="form form-wrapper">
                             <form class="form form-horizontal" method="post" name="form">
                                 <div class="form-group col-xs-2 col-md-2"  style="margin-right: 300px">
-                                    <label for="ra_aluno" class="label label-message">Registro Academico</label>
+                                    <label for="ra_aluno" class="label label-message">Registro Acadêmico</label>
                                     <?php
                                     if(empty($professor->RA))
                                         echo '<input type="text"  class="form-control" id="ra_aluno" required name="ra" placeholder="Registro Academico">';
@@ -252,7 +252,7 @@ if(isset($_POST['delete']))
 
 
 
-        ;
+    ;
     echo '
                     <script>
                         $(document).ready(function(){

@@ -78,7 +78,7 @@ $turma = $t->findByType('idTurma',$id);
                     <li class="link">
                         <a href="#collapse-materias" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-blackboard"></span>
-                            <span class="hidden-sm hidden-xs">Matï¿½rias</span>
+                            <span class="hidden-sm hidden-xs">Matérias</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-materias">
@@ -103,7 +103,7 @@ $turma = $t->findByType('idTurma',$id);
                     <li class="link">
                         <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list-alt"></span>
-                            <span class="hidden-sm hidden-xs">Frequï¿½ncia</span>
+                            <span class="hidden-sm hidden-xs">Frequ?ncia</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-frequencia">
@@ -116,7 +116,7 @@ $turma = $t->findByType('idTurma',$id);
                     <li class="link">
                         <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list"></span>
-                            <span class="hidden-sm hidden-xs">Relatï¿½rios</span>
+                            <span class="hidden-sm hidden-xs">Relat?rios</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-report">
@@ -169,7 +169,7 @@ $turma = $t->findByType('idTurma',$id);
                         <div class="form form-wrapper">
                             <form class="form form-horizontal" method="post" name="form">
                                 <div class="form-group col-xs-12 col-md-12" >
-                                    <label for="nome_aluno" class="label label-message" >Cï¿½digo da Turma</label>
+                                    <label for="nome_aluno" class="label label-message" >Código da Turma</label>
                                     <?php
                                     if (empty($turma->Codigo))
                                         echo '<input type="text" style="width: 15%" class="form-control" id="nome_aluno" required name="codigo_turma" placeholder="codigo da Turma">';
@@ -179,7 +179,7 @@ $turma = $t->findByType('idTurma',$id);
                                     ?>
                                 </div>
                                 <div class="form-group col-xs-8 col-md-8" style="margin-right: 30px">
-                                    <label for="nome_aluno" class="label label-message">Matï¿½ria</label>
+                                    <label for="nome_aluno" class="label label-message">Matéria</label>
                                     <?php
                                     $mat = new \DB\Database\LoadSelect;
 
@@ -200,7 +200,7 @@ $turma = $t->findByType('idTurma',$id);
                                     ?>
                                 </div>
                                 <div class="form-group col-xs-2 col-md-2" >
-                                    <label for="nome_aluno" class="label label-message">Data de Criaï¿½ï¿½o</label>
+                                    <label for="nome_aluno" class="label label-message">Data de Criação</label>
                                     <?php
                                     if(empty($turma->Data_Criacao))
                                         echo '<input type="text"  class="form-control" id="date_criacao" required name="data_criacao" placeholder="dd/mm/aaaa" value="'.date('d/m/Y').'">';
@@ -211,12 +211,12 @@ $turma = $t->findByType('idTurma',$id);
 
                                 </div>
                                 <div class="form-group col-xs-12 col-md-12">
-                                    <label for="descricao" class="label label-message">Descriï¿½ï¿½o</label>
+                                    <label for="descricao" class="label label-message">Descri??o</label>
                                     <?php
                                     if(empty($turma->Descricao))
-                                        echo '<textarea class="form-control" name="descricao" placeholder="Descriï¿½ï¿½o sobre a Turma"></textarea>';
+                                        echo '<textarea class="form-control" name="descricao" placeholder="Descri??o sobre a Turma"></textarea>';
                                     else
-                                        echo '<textarea class="form-control" name="descricao" placeholder="Descriï¿½ï¿½o sobre a Turma">'.$turma->Descricao.'</textarea>';
+                                        echo '<textarea class="form-control" name="descricao" placeholder="Descri??o sobre a Turma">'.$turma->Descricao.'</textarea>';
                                     ?>
 
                                 </div>

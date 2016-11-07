@@ -58,7 +58,7 @@ $aluno = $al->findByType('RA',$_SESSION['idRA']);
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-aluno">
-                            <li><a href="frmListMateriasAluno.php">Listar Mat?rias</a></li>
+                            <li><a href="frmListMateriasAluno.php">Listar Matérias</a></li>
                         </ul>
                     </li>
                     <?php
@@ -124,8 +124,8 @@ $aluno = $al->findByType('RA',$_SESSION['idRA']);
                             <form class="form form-horizontal" method="post" name="form">
                                 <div class="form-group" style="padding: 10px">
                                     <?php
-                                        $loadchekc = new \DB\Database\LoadCheckBox;
-                                        $loadchekc->loadcheck('Turma','Materia','Materia_idMateria','idMateria');
+                                    $loadchekc = new \DB\Database\LoadCheckBox;
+                                    $loadchekc->loadcheck('Turma','Materia','Materia_idMateria','idMateria');
                                     ?>
 
                                 </div>
@@ -165,10 +165,10 @@ if(isset($_POST['cadastrar'])) {
                 'idAluno' => $aluno->idAluno,
                 'idTurma' => $check
             ]);
-        }
-        $al->update($aluno->idAluno,['Matricula'=>1],'idAluno');
+    }
+    $al->update($aluno->idAluno,['Matricula'=>1],'idAluno');
 
-        echo '
+    echo '
         <script>
             $(document).ready(function(){
                 $("#messagemSucess").modal("show");

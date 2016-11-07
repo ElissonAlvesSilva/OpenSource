@@ -63,7 +63,7 @@ $materia = $mat->findByType('idMateria',$id);
                 <li class="link">
                     <a href="#collapse-materias" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-blackboard"></span>
-                        <span class="hidden-sm hidden-xs">Matï¿½rias</span>
+                        <span class="hidden-sm hidden-xs">Matérias</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-materias">
@@ -88,7 +88,7 @@ $materia = $mat->findByType('idMateria',$id);
                 <li class="link">
                     <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
-                        <span class="hidden-sm hidden-xs">Frequï¿½ncia</span>
+                        <span class="hidden-sm hidden-xs">Frequ?ncia</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-frequencia">
@@ -101,7 +101,7 @@ $materia = $mat->findByType('idMateria',$id);
                 <li class="link">
                     <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list"></span>
-                        <span class="hidden-sm hidden-xs">Relatï¿½rios</span>
+                        <span class="hidden-sm hidden-xs">Relat?rios</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-report">
@@ -148,7 +148,7 @@ $materia = $mat->findByType('idMateria',$id);
 
             <div id="content">
                 <header>
-                    <h2 class="page_title">Detalhes Matï¿½ria</h2>
+                    <h2 class="page_title">Detalhes Matéria</h2>
                 </header>
                 <div class="content-inner">
                     <div class="form form-wrapper">
@@ -163,29 +163,29 @@ $materia = $mat->findByType('idMateria',$id);
                                 ?>
                             </div>
                             <div class="form-group col-xs-3 col-md-3">
-                                <label class="label-detail">Data de Criaï¿½ï¿½o</label>
+                                <label class="label-detail">Data de Criação</label>
                                 <?php
                                 if(empty($materia->Data_Criacao))
-                                    echo '<p class="data">Sem Data de Criaï¿½ï¿½o</p>';
+                                    echo '<p class="data">Sem Data de Criação</p>';
                                 else
                                     echo '<p class="data">'.(date('d/m/Y',strtotime($materia->Data_Criacao))).'</p>';
                                 ?>
                             </div>
                             <div class="form-group col-xs-2 col-md-2">
-                                <label class="label-detail">Carga Horï¿½ria</label>
+                                <label class="label-detail">Carga Horária</label>
                                 <?php
                                 if(empty($materia->RG))
-                                    echo '<p class="data">Carga Nï¿½o informada</p>';
+                                    echo '<p class="data">Carga Não informada</p>';
                                 else
                                     echo '<p class="data">'.$materia->Carga_Horaria.'</p>';
                                 ?>
 
                             </div>
                             <div class="form-group col-xs-12 col-md-12">
-                                <label class="label-detail">Descriï¿½ï¿½o</label>
+                                <label class="label-detail">Descrição</label>
                                 <?php
                                 if(empty($materia->Descricao))
-                                    echo '<p class="data">Decriï¿½ï¿½o nï¿½o informada</p>';
+                                    echo '<p class="data">Decrição não informada</p>';
                                 else
                                     echo '<p class="data">'.$materia->Descricao.'</p>';
                                 ?>
@@ -197,7 +197,7 @@ $materia = $mat->findByType('idMateria',$id);
             </div>
             <div id="content">
                 <header>
-                    <h2 class="page_title">Turmas da Matï¿½ria</h2>
+                    <h2 class="page_title">Turmas da Matéria</h2>
                 </header>
                 <div class="content-inner">
                     <div class="form form-wrapper">
@@ -205,7 +205,7 @@ $materia = $mat->findByType('idMateria',$id);
                             <thead>
                             <tr>
                                 <th>Turma</th>
-                                <th>Matï¿½ria</th>
+                                <th>Matéria</th>
                                 <th>Professor</th>
                                 <th>Detalhes da Turma</th>
                             </tr>
@@ -255,7 +255,7 @@ $materia = $mat->findByType('idMateria',$id);
     $(document).ready(function(){
         $('#tableMateria').dataTable({
             "oLanguage": {
-                "sProcessing": "Aguarde enquanto os dados sï¿½o carregados ...",
+                "sProcessing": "Aguarde enquanto os dados são carregados ...",
                 "sLengthMenu": "Mostrar _MENU_ registros por pagina",
                 "sZeroRecords": "Nenhum registro correspondente ao criterio encontrado",
                 "sInfoEmpty": "Exibindo 0 a 0 de 0 registros",
@@ -265,8 +265,8 @@ $materia = $mat->findByType('idMateria',$id);
                 "oPaginate": {
                     "sFirst":    "Primeiro",
                     "sPrevious": "Anterior",
-                    "sNext":     "Prï¿½ximo",
-                    "sLast":     "ï¿½ltimo"
+                    "sNext":     "Próximo",
+                    "sLast":     "Último"
                 }
             }
         });
