@@ -1,6 +1,6 @@
 <?php @ob_start();session_start();require "config/config.php";?>
 <?php
-date_default_timezone_set('UTC');
+date_default_timezone_set('America/Manaus');
 $id = isset($_GET['id'])?$_GET['id']:"";
 $prof = new \Frequencia\Models\Professor;
 $reg = new \Frequencia\Models\Registro_Academico;
@@ -89,7 +89,7 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                     <li class="link">
                         <a href="#collapse-materias" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-blackboard"></span>
-                            <span class="hidden-sm hidden-xs">Matérias</span>
+                            <span class="hidden-sm hidden-xs">Matï¿½rias</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-materias">
@@ -114,7 +114,7 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                     <li class="link">
                         <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list-alt"></span>
-                            <span class="hidden-sm hidden-xs">Frequência</span>
+                            <span class="hidden-sm hidden-xs">Frequï¿½ncia</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-frequencia">
@@ -127,7 +127,7 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                     <li class="link">
                         <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list"></span>
-                            <span class="hidden-sm hidden-xs">Relatórios</span>
+                            <span class="hidden-sm hidden-xs">Relatï¿½rios</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-report">

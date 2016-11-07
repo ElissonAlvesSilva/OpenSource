@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <?php header('Content-type: text/html; charset=ISO-8859-1');?>
+    <?php date_default_timezone_set('America/Manaus'); header('Content-type: text/html; charset=ISO-8859-1');?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ESMAM</title>
@@ -53,7 +53,7 @@
                     <li class="link">
                         <a href="#collapse-materias" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-blackboard"></span>
-                            <span class="hidden-sm hidden-xs">Matérias</span>
+                            <span class="hidden-sm hidden-xs">Matï¿½rias</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-materias">
@@ -78,7 +78,7 @@
                     <li class="link">
                         <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list-alt"></span>
-                            <span class="hidden-sm hidden-xs">Frequência</span>
+                            <span class="hidden-sm hidden-xs">Frequï¿½ncia</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-frequencia">
@@ -91,7 +91,7 @@
                     <li class="link">
                         <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list"></span>
-                            <span class="hidden-sm hidden-xs">Relatórios</span>
+                            <span class="hidden-sm hidden-xs">Relatï¿½rios</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-report">

@@ -1,6 +1,6 @@
 <?php @ob_start();session_start();require "config/config.php";?>
 <?php
-date_default_timezone_set('UTC');
+date_default_timezone_set('America/Manaus');
 $id = $_SESSION['idRA'];
 $prof = new \Frequencia\Models\Professor;
 $reg = new \Frequencia\Models\Registro_Academico;

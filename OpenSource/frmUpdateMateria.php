@@ -1,6 +1,6 @@
 <?php @ob_start();session_start();require "config/config.php";?>
 <?php
-date_default_timezone_set('UTC');
+date_default_timezone_set('America/Manaus');
 $id = isset($_GET['id'])?$_GET['id']:"";
 $mat = new \Frequencia\Models\Materia;
 $materia = $mat->findByType('idMateria',$id);

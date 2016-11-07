@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <?php date_default_timezone_set('UTC'); header('Content-type: text/html; charset=ISO-8859-1');?>
+    <?php date_default_timezone_set('America/Manaus'); header('Content-type: text/html; charset=ISO-8859-1');?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BFE | Cadastro</title>
@@ -71,7 +71,7 @@
                 <li class="link">
                     <a href="#collapse-materias" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-blackboard"></span>
-                        <span class="hidden-sm hidden-xs">Matérias</span>
+                        <span class="hidden-sm hidden-xs">Matï¿½rias</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-materias">
@@ -96,7 +96,7 @@
                 <li class="link">
                     <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
-                        <span class="hidden-sm hidden-xs">Frequência</span>
+                        <span class="hidden-sm hidden-xs">Frequï¿½ncia</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-frequencia">
@@ -109,7 +109,7 @@
                 <li class="link">
                     <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list"></span>
-                        <span class="hidden-sm hidden-xs">Relatórios</span>
+                        <span class="hidden-sm hidden-xs">Relatï¿½rios</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-report">
@@ -156,26 +156,26 @@
 
             <div id="content">
                 <header>
-                    <h2 class="page_title">Nova Matéria</h2>
+                    <h2 class="page_title">Nova Matï¿½ria</h2>
                 </header>
                 <div class="content-inner">
                     <div class="form form-wrapper">
                         <form class="form form-horizontal" method="post" name="form">
                             <div class="form-group col-xs-8 col-md-8" style="margin-right: 20px">
-                                <label for="nome_materia" class="label label-message">Nome da Matéria</label>
+                                <label for="nome_materia" class="label label-message">Nome da Matï¿½ria</label>
                                 <input type="text"  class="form-control" id="nome_materia" required name="nome" placeholder="Nome da Materia">
                             </div>
                             <div class="form-group col-xs-2 col-md-2" style="margin-right: 20px" >
-                                <label for="carga" class="label label-message">Carga Horária</label>
+                                <label for="carga" class="label label-message">Carga Horï¿½ria</label>
                                 <input type="text"  class="form-control" id="carga" required name="carga_horaria" maxlength="7" placeholder="ex: 120HRS">
                             </div>
                             <div class="form-group col-xs-2 col-md-2" >
-                                <label for="data_criacao" class="label label-message">Data de Criação</label>
+                                <label for="data_criacao" class="label label-message">Data de Criaï¿½ï¿½o</label>
                                 <input type="text"  class="form-control" id="data_criacao" required name="data_criacao" placeholder="dd/mm/aaaa">
                             </div>
                             <div class="form-group col-xs-12 col-md-12">
-                                <label for="descricao" class="label label-message">Descrição</label>
-                                <textarea class="form-control" name="descricao" placeholder="Descrição sobre a Matéria"></textarea>
+                                <label for="descricao" class="label label-message">Descriï¿½ï¿½o</label>
+                                <textarea class="form-control" name="descricao" placeholder="Descriï¿½ï¿½o sobre a Matï¿½ria"></textarea>
                             </div>
 
                             <div class="clearfix">
@@ -240,7 +240,7 @@
                     <h4 class="modal-title">Mensagem BFE</h4>
                   </div>
                   <div class="modal-body">
-                    <p>Matéria <b><i>'.$_POST['nome'].'</i></b> Cadastrado com sucesso</p>
+                    <p>Matï¿½ria <b><i>'.$_POST['nome'].'</i></b> Cadastrado com sucesso</p>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal" id="button_cad_materia">Fechar</button>
@@ -264,7 +264,7 @@
                     <h4 class="modal-title">Mensagem BFE</h4>
                   </div>
                   <div class="modal-body">
-                    <p>Matéria <b><i>'.$_POST['nome'].'</i></b> já está cadastrado no sistema.</p>
+                    <p>Matï¿½ria <b><i>'.$_POST['nome'].'</i></b> jï¿½ estï¿½ cadastrado no sistema.</p>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>

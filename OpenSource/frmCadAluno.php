@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <?php header('Content-type: text/html; charset=ISO-8859-1');?>
+    <?php date_default_timezone_set('America/Manaus'); header('Content-type: text/html; charset=ISO-8859-1');?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BFE | Cadastro</title>

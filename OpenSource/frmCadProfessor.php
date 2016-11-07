@@ -8,7 +8,7 @@ $RA = $registro->RA+1;
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <?php header('Content-type: text/html; charset=ISO-8859-1');?>
+    <?php date_default_timezone_set('America/Manaus'); header('Content-type: text/html; charset=ISO-8859-1');?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BFE | Cadastro</title>
@@ -83,7 +83,7 @@ $RA = $registro->RA+1;
                 <li class="link">
                     <a href="#collapse-materias" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-blackboard"></span>
-                        <span class="hidden-sm hidden-xs">Matérias</span>
+                        <span class="hidden-sm hidden-xs">Matï¿½rias</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-materias">
@@ -108,7 +108,7 @@ $RA = $registro->RA+1;
                 <li class="link">
                     <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
-                        <span class="hidden-sm hidden-xs">Frequência</span>
+                        <span class="hidden-sm hidden-xs">Frequï¿½ncia</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-frequencia">
@@ -121,7 +121,7 @@ $RA = $registro->RA+1;
                 <li class="link">
                     <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list"></span>
-                        <span class="hidden-sm hidden-xs">Relatórios</span>
+                        <span class="hidden-sm hidden-xs">Relatï¿½rios</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-report">
@@ -182,7 +182,7 @@ $RA = $registro->RA+1;
                                 <input type="text"  class="form-control" id="nome_aluno" required name="nome" placeholder="Nome Completo">
                             </div>
                             <div class="form-group col-xs-8 col-md-8" style="margin-right: 200px">
-                                <label for="nome_aluno" class="label label-message">Nome da Mãe</label>
+                                <label for="nome_aluno" class="label label-message">Nome da Mï¿½e</label>
                                 <input type="text"  class="form-control" id="nome_aluno" required name="nome_mae" placeholder="Nome Completo">
                             </div>
                             <div class="form-group col-xs-3 col-xs-3" >
@@ -199,11 +199,11 @@ $RA = $registro->RA+1;
                             </div>
                             <br/>
                             <div class="form-group col-xs-8 col-md-8" style="margin-right: 200px">
-                                <label for="endereco" class="label label-message">Endereço</label>
-                                <input type="text"  class="form-control" id="endereco" required name="endereco" placeholder="Endereço Completo">
+                                <label for="endereco" class="label label-message">Endereï¿½o</label>
+                                <input type="text"  class="form-control" id="endereco" required name="endereco" placeholder="Endereï¿½o Completo">
                             </div>
                             <div class="form-group col-xs-3 col-xs-3" style="margin-right: 30px">
-                                <label for="date" class="label label-message">Data de Admissão</label>
+                                <label for="date" class="label label-message">Data de Admissï¿½o</label>
                                 <input type="text" class="form-control"  id="date_admissao" maxlength="10" OnKeyPress="formatar('##/##/####', this)" name="data_admissao" placeholder="dd/mm/aaaa">
                             </div>
                             <div class="form-group col-md-3 col-xs-3" >
@@ -333,7 +333,7 @@ $RA = $registro->RA+1;
                             <h4 class="modal-title">Mensagem BFE</h4>
                           </div>
                           <div class="modal-body">
-                            <p>Professor <b><i>'.$_POST['nome'].'</i></b> já está cadastrado no sistema.</p>
+                            <p>Professor <b><i>'.$_POST['nome'].'</i></b> jï¿½ estï¿½ cadastrado no sistema.</p>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>

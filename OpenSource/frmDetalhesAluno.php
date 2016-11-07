@@ -11,7 +11,7 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
     <!DOCTYPE html>
     <html lang="pt-br">
     <head>
-        <?php header('Content-type: text/html; charset=ISO-8859-1');?>
+        <?php date_default_timezone_set('America/Manaus'); header('Content-type: text/html; charset=ISO-8859-1');?>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>BFE | Cadastro</title>
@@ -65,7 +65,7 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                     <li class="link">
                         <a href="#collapse-materias" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-blackboard"></span>
-                            <span class="hidden-sm hidden-xs">Matérias</span>
+                            <span class="hidden-sm hidden-xs">Matï¿½rias</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-materias">
@@ -90,7 +90,7 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                     <li class="link">
                         <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list-alt"></span>
-                            <span class="hidden-sm hidden-xs">Frequência</span>
+                            <span class="hidden-sm hidden-xs">Frequï¿½ncia</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-frequencia">
@@ -103,7 +103,7 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                     <li class="link">
                         <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list"></span>
-                            <span class="hidden-sm hidden-xs">Relatórios</span>
+                            <span class="hidden-sm hidden-xs">Relatï¿½rios</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-report">
@@ -156,7 +156,7 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                         <div class="form form-wrapper">
                             <form class="form form-horizontal" method="post" name="form">
                                 <div class="form-group col-xs-3 col-md-3">
-                                    <label class="label-detail">Registro Acadêmico</label>
+                                    <label class="label-detail">Registro Acadï¿½mico</label>
                                     <?php
                                         if(empty($aluno->RA))
                                             echo '<p class="data">SEM R.A.</p>';
@@ -197,7 +197,7 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                                     <label class="label-detail">RG</label>
                                     <?php
                                     if(empty($aluno->RG))
-                                        echo '<p class="data">RG Não Informado</p>';
+                                        echo '<p class="data">RG Nï¿½o Informado</p>';
                                     else
                                         echo '<p class="data">'.$aluno->RG.'</p>';
                                     ?>
@@ -207,27 +207,27 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                                     <label class="label-detail">CPF</label>
                                     <?php
                                     if(empty($aluno->CPF))
-                                        echo '<p class="data">CPF Não Informado</p>';
+                                        echo '<p class="data">CPF Nï¿½o Informado</p>';
                                     else
                                         echo '<p class="data">'.$aluno->CPF.'</p>';
                                     ?>
 
                                 </div>
                                 <div class="form-group col-xs-6 col-md-6">
-                                    <label class="label-detail">Nome da Mãe</label>
+                                    <label class="label-detail">Nome da Mï¿½e</label>
                                     <?php
                                     if(empty($aluno->Nome_Mae))
-                                        echo '<p class="data">Nome Não Informado</p>';
+                                        echo '<p class="data">Nome Nï¿½o Informado</p>';
                                     else
                                         echo '<p class="data">'.$aluno->Nome_Mae.'</p>';
                                     ?>
 
                                 </div>
                                 <div class="form-group col-xs-12 col-md-12">
-                                    <label class="label-detail">Endereço</label>
+                                    <label class="label-detail">Endereï¿½o</label>
                                     <?php
                                     if(empty($aluno->Endereco))
-                                        echo '<p class="data">Endereço não Informado</p>';
+                                        echo '<p class="data">Endereï¿½o nï¿½o Informado</p>';
                                     else
                                         echo '<p class="data">'.$aluno->Endereco.'</p>';
                                     ?>
@@ -238,7 +238,7 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                                     <label class="label-detail">Telefone</label>
                                     <?php
                                     if(empty($aluno->Telefone))
-                                        echo '<p class="data">Telefone Não Informado</p>';
+                                        echo '<p class="data">Telefone Nï¿½o Informado</p>';
                                     else
                                         echo '<p class="data">'.$aluno->Telefone.'</p>';
                                     ?>
@@ -248,7 +248,7 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                                     <label class="label-detail">E-mail</label>
                                     <?php
                                     if(empty($aluno->Email))
-                                        echo '<p class="data">Email Não Informado</p>';
+                                        echo '<p class="data">Email Nï¿½o Informado</p>';
                                     else
                                         echo '<p class="data">'.$aluno->Email.'</p>';
                                     ?>
@@ -272,7 +272,7 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                                 <thead>
                                 <tr>
                                     <th>Turma</th>
-                                    <th>Matéria</th>
+                                    <th>Matï¿½ria</th>
                                     <th>Professor</th>
                                     <th>Detalhes da Turma</th>
                                 </tr>
@@ -335,7 +335,7 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
         $(document).ready(function(){
             $('#tableAluno').dataTable({
                 "oLanguage": {
-                    "sProcessing": "Aguarde enquanto os dados são carregados ...",
+                    "sProcessing": "Aguarde enquanto os dados sï¿½o carregados ...",
                     "sLengthMenu": "Mostrar _MENU_ registros por pagina",
                     "sZeroRecords": "Nenhum registro correspondente ao criterio encontrado",
                     "sInfoEmpty": "Exibindo 0 a 0 de 0 registros",
@@ -345,8 +345,8 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                     "oPaginate": {
                         "sFirst":    "Primeiro",
                         "sPrevious": "Anterior",
-                        "sNext":     "Próximo",
-                        "sLast":     "Último"
+                        "sNext":     "Prï¿½ximo",
+                        "sLast":     "ï¿½ltimo"
                     }
                 }
             });

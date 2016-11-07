@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <?php header('Content-type: text/html; charset=ISO-8859-1');?>
+    <?php date_default_timezone_set('America/Manaus'); header('Content-type: text/html; charset=ISO-8859-1');?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BFE | Cadastro</title>
@@ -77,7 +77,7 @@
                 <li class="link">
                     <a href="#collapse-materias" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-blackboard"></span>
-                        <span class="hidden-sm hidden-xs">Matérias</span>
+                        <span class="hidden-sm hidden-xs">Matï¿½rias</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-materias">
@@ -102,7 +102,7 @@
                 <li class="link">
                     <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list-alt"></span>
-                        <span class="hidden-sm hidden-xs">Frequência</span>
+                        <span class="hidden-sm hidden-xs">Frequï¿½ncia</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-frequencia">
@@ -115,7 +115,7 @@
                 <li class="link">
                     <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-list"></span>
-                        <span class="hidden-sm hidden-xs">Relatórios</span>
+                        <span class="hidden-sm hidden-xs">Relatï¿½rios</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
                     <ul class="collapse collapseable" id="collapse-report">
@@ -162,17 +162,17 @@
 
             <div id="content">
                 <header>
-                    <h2 class="page_title">Nova Matéria</h2>
+                    <h2 class="page_title">Nova Matï¿½ria</h2>
                 </header>
                 <div class="content-inner">
                     <div class="form form-wrapper">
                         <form class="form form-horizontal" method="post" name="form">
                             <div class="form-group col-xs-12 col-md-12" >
-                                <label for="nome_aluno" class="label label-message" >Código da Turma</label>
+                                <label for="nome_aluno" class="label label-message" >Cï¿½digo da Turma</label>
                                 <input type="text" style="width: 15%" class="form-control" id="nome_aluno" required name="codigo_turma" placeholder="codigo da Turma">
                             </div>
                             <div class="form-group col-xs-8 col-md-8" style="margin-right: 30px">
-                                <label for="nome_aluno" class="label label-message">Matéria</label>
+                                <label for="nome_aluno" class="label label-message">Matï¿½ria</label>
                                 <?php
                                  $mat = new \DB\Database\LoadSelect;
                                  $mat->loadMateria();
@@ -186,12 +186,12 @@
                                 ?>
                             </div>
                             <div class="form-group col-xs-2 col-md-2" >
-                                <label for="nome_aluno" class="label label-message">Data de Criação</label>
+                                <label for="nome_aluno" class="label label-message">Data de Criaï¿½ï¿½o</label>
                                 <input type="text"  class="form-control" id="nome_aluno" required name="data_criacao" placeholder="dd/mm/aaaa" value="<?php echo date('d/m/Y');?>">
                             </div>
                             <div class="form-group col-xs-12 col-md-12">
-                                <label for="descricao" class="label label-message">Descrição</label>
-                                <textarea class="form-control" name="descricao" placeholder="Descrição sobre a Turma"></textarea>
+                                <label for="descricao" class="label label-message">Descriï¿½ï¿½o</label>
+                                <textarea class="form-control" name="descricao" placeholder="Descriï¿½ï¿½o sobre a Turma"></textarea>
                             </div>
 
                             <div class="clearfix">
@@ -284,7 +284,7 @@
                     <h4 class="modal-title">Mensagem BFE</h4>
                   </div>
                   <div class="modal-body">
-                    <p>Turma <b><i>'.$_POST['codigo_turma'].'</i></b> já está cadastrado no sistema.</p>
+                    <p>Turma <b><i>'.$_POST['codigo_turma'].'</i></b> jï¿½ estï¿½ cadastrado no sistema.</p>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal" id="button_cad_turma">Fechar</button>

@@ -11,7 +11,7 @@ $mat = new \Frequencia\Models\Materia;
     <!DOCTYPE html>
     <html lang="pt-br">
     <head>
-        <?php header('Content-type: text/html; charset=ISO-8859-1');?>
+        <?php date_default_timezone_set('America/Manaus'); header('Content-type: text/html; charset=ISO-8859-1');?>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>BFE | Cadastro</title>
@@ -65,7 +65,7 @@ $mat = new \Frequencia\Models\Materia;
                     <li class="link">
                         <a href="#collapse-materias" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-blackboard"></span>
-                            <span class="hidden-sm hidden-xs">Matérias</span>
+                            <span class="hidden-sm hidden-xs">Matï¿½rias</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-materias">
@@ -90,7 +90,7 @@ $mat = new \Frequencia\Models\Materia;
                     <li class="link">
                         <a href="#collapse-frequencia" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list-alt"></span>
-                            <span class="hidden-sm hidden-xs">Frequência</span>
+                            <span class="hidden-sm hidden-xs">Frequï¿½ncia</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-frequencia">
@@ -103,7 +103,7 @@ $mat = new \Frequencia\Models\Materia;
                     <li class="link">
                         <a href="#collapse-report" data-toggle="collapse" aria-controls="collapse-post">
                             <span class="glyphicon glyphicon-list"></span>
-                            <span class="hidden-sm hidden-xs">Relatórios</span>
+                            <span class="hidden-sm hidden-xs">Relatï¿½rios</span>
                             <span class="pull-right glyphicon glyphicon-menu-down"></span>
                         </a>
                         <ul class="collapse collapseable" id="collapse-report">
@@ -157,19 +157,19 @@ $mat = new \Frequencia\Models\Materia;
                         <div class="form form-wrapper">
                             <form class="form form-horizontal" method="post" name="form">
                                 <div class="form-group col-xs-3 col-md-3">
-                                    <label class="label-detail">Código da Turma</label>
+                                    <label class="label-detail">Cï¿½digo da Turma</label>
                                     <?php
                                     if(empty($turma->Codigo))
-                                        echo '<p class="data">SEM Código</p>';
+                                        echo '<p class="data">SEM Cï¿½digo</p>';
                                     else
                                         echo '<p class="data">'.$turma->Codigo.'</p>';
                                     ?>
                                 </div>
                                 <div class="form-group col-xs-4 col-md-4">
-                                    <label class="label-detail">Matéria</label>
+                                    <label class="label-detail">Matï¿½ria</label>
                                     <?php
                                     if(empty($turma->Materia_idMateria))
-                                        echo '<p class="data">Sem Matéria Cadastrada</p>';
+                                        echo '<p class="data">Sem Matï¿½ria Cadastrada</p>';
                                     else{
                                         $mat = $mat->findByType('idMateria',$turma->Materia_idMateria);
                                         echo '<p class="data">'.$mat->Nome.'</p>';
@@ -189,7 +189,7 @@ $mat = new \Frequencia\Models\Materia;
                                     ?>
                                 </div>
                                 <div class="form-group col-xs-12 col-md-12">
-                                    <label class="label-detail">Descrição da Turma</label>
+                                    <label class="label-detail">Descriï¿½ï¿½o da Turma</label>
                                     <?php
                                     if(empty($turma->Descricao))
                                         echo '<p class="data">Sem Professsor Cadastrado</p>';
@@ -265,7 +265,7 @@ $mat = new \Frequencia\Models\Materia;
         $(document).ready(function(){
             $('#tableTurma').dataTable({
                 "oLanguage": {
-                    "sProcessing": "Aguarde enquanto os dados são carregados ...",
+                    "sProcessing": "Aguarde enquanto os dados sï¿½o carregados ...",
                     "sLengthMenu": "Mostrar _MENU_ registros por pagina",
                     "sZeroRecords": "Nenhum registro correspondente ao criterio encontrado",
                     "sInfoEmpty": "Exibindo 0 a 0 de 0 registros",
@@ -275,8 +275,8 @@ $mat = new \Frequencia\Models\Materia;
                     "oPaginate": {
                         "sFirst":    "Primeiro",
                         "sPrevious": "Anterior",
-                        "sNext":     "Próximo",
-                        "sLast":     "Último"
+                        "sNext":     "Prï¿½ximo",
+                        "sLast":     "ï¿½ltimo"
                     }
                 }
             });
