@@ -175,7 +175,7 @@
                                 </div>
                                 <div class="form-group col-xs-12 col-md-12">
                                     <label for="descricao" class="label label-message">Descrição</label>
-                                    <textarea class="form-control" name="descricao" placeholder="Descri??o sobre a Mat?ria"></textarea>
+                                    <textarea class="form-control" name="descricao" placeholder="Descricão sobre a Matéria"></textarea>
                                 </div>
 
                                 <div class="clearfix">
