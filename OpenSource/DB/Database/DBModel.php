@@ -277,6 +277,24 @@ class DBModel implements IModel
             dump($e->getMessage());
         }
     }
+    public function findByCountFault($name1,$name2,$parameter1,$parameter2)
+    {
+        $query = "SELECT COUNT(*) as total FROM $this->table WHERE $name1 = $parameter1 AND $name2 = $parameter2 AND Status = 2";
+
+        $pdo = $this->database->prepare($query);
+
+        try
+        {
+            $pdo->execute();
+
+            return $pdo->fetch();
+
+        }catch (PDOException $e)
+
+        {
+            dump($e->getMessage());
+        }
+    }
 
 
     public function verify($name,$value)

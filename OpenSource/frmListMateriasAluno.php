@@ -4,9 +4,8 @@ date_default_timezone_set('America/Manaus');
 $id = $_SESSION['idRA'];
 $al = new \Frequencia\Models\Aluno;
 $reg =new \Frequencia\Models\Registro_Academico;
-$aluno = $al->findByType('idAluno',$id);
-$registro = $reg->findByType('idRegistro',$aluno->RA);
-
+$registro = $reg->findByType('idRegistro',$id);
+$aluno = $al->findByType('RA',$registro->idRegistro);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -228,6 +227,8 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                                 <th>Turma</th>
                                 <th>Matéria</th>
                                 <th>Professor</th>
+                                <th>Falta ( % )</th>
+                                <th>Mostrar Faltas</th>
 
                             </tr>
                             </thead>
@@ -235,15 +236,18 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                             <?php
                             $turma_Aluno = new \Frequencia\Models\Turma_Aluno;
 
-                            $turma_Aluno = $turma_Aluno->findByTypeAll('idAluno',$id);
+                            $turma_Aluno = $turma_Aluno->findByTypeAll('idAluno',$aluno->idAluno);
                             if($turma_Aluno !=null){
+
                                 foreach ($turma_Aluno as $item){
                                     $turma = new \Frequencia\Models\Turma;
                                     $materia = new \Frequencia\Models\Materia;
                                     $professor = new \Frequencia\Models\Professor;
+                                    $frequencia = new \Frequencia\Models\Frequencia;
 
                                     $turma = $turma->findByType('idTurma',$item->idTurma);
                                     $materia = $materia->findByType('idMateria',$turma->Materia_idMateria);
+
                                     if($turma->Professor_idProfessor == null)
                                         $professor_turma = "Sem Professor";
                                     else if($turma->Professor_idProfessor != null){
@@ -251,14 +255,22 @@ $registro = $reg->findByType('idRegistro',$aluno->RA);
                                         $professor_turma = $professor->Nome;
                                     }
 
-                                    $detalhes = "frmDetalhesTurma.php?id=".$turma->idTurma;
+                                    $frequencia = $frequencia->findByCountFault('idAluno','idTurma',$aluno->idAluno,$item->idTurma);
+
+
+                                    $calc_falta = (($frequencia->total*2)*100)/$materia->Carga_Horaria;
+
+                                    $datas = "frmListFaltaAluno.php?id=".$turma->idTurma;
+
                                     echo
                                         '
                                                     <tr>
                                                         <td>'.$turma->Codigo.'</td>
                                                         <td>'.$materia->Nome.'</td>
                                                         <td>'.$professor_turma.'</td>
-                                                         
+                                                        <td>'.(number_format($calc_falta,1))." %".'</td>
+                                                        <td><a href="'.$datas.'"><span class="label label-warning">Faltas</span></a></td>
+
                                                     </tr>
                                                 ';
 
