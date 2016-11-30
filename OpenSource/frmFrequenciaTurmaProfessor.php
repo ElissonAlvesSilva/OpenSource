@@ -4,8 +4,8 @@ date_default_timezone_set('America/Manaus');
 $id = $_SESSION['idRA'];
 $prof = new \Frequencia\Models\Professor;
 $reg = new \Frequencia\Models\Registro_Academico;
-$professor = $prof->findByType('idProfessor',$id);
-$registro = $reg->findByType('idRegistro',$professor->RA);
+$registro = $reg->findByType('idRegistro',$id);
+$professor = $prof->findByType('RA',$registro->idRegistro);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -48,12 +48,12 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                     </ul>
                 </li>
                 <li class="link">
-                    <a href="#collapse-aluno" data-toggle="collapse" aria-controls="collapse-post">
+                    <a href="#collapse-turma" data-toggle="collapse" aria-controls="collapse-post">
                         <span class="glyphicon glyphicon-education"></span>
                         <span class="hidden-sm hidden-xs">Turmas</span>
                         <span class="pull-right glyphicon glyphicon-menu-down"></span>
                     </a>
-                    <ul class="collapse collapseable" id="collapse-aluno">
+                    <ul class="collapse collapseable" id="collapse-turma">
                         <li><a href="frmTurmasProf.php">Turmas</a></li>
                     </ul>
                 </li>
@@ -106,7 +106,7 @@ $registro = $reg->findByType('idRegistro',$professor->RA);
                             <tbody>
                             <?php
                             $turma = new \Frequencia\Models\Turma;
-                            $turma = $turma->findByTypeAll('Professor_idProfessor',$id);
+                            $turma = $turma->findByTypeAll('Professor_idProfessor',$professor->idProfessor);
                             if($turma != false){
                                 foreach ($turma as $item){
 

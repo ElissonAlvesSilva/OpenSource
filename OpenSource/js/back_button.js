@@ -45,8 +45,8 @@ $(document).ready(function(){
     });
     $('#button_frequencia_turma').click(function (e) {
         var id = $('#idTurma').val();
-        var data = $('#data_freq').val();
-        window.location.href = "frmFrequenciaBaixada.php?idTurma="+id+"&data="+data;
+        var data_frequencia = $('#frequencia_data').val();
+        window.location.href = "frmFrequenciaBaixada.php?idTurma="+id+"&data="+data_frequencia;
     });
 
 });

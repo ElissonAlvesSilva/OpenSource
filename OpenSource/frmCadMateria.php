@@ -16,7 +16,7 @@
         <script src="js/bootstrap-datepicker.js"></script>
         <script src="js/datepicker-pt-BR.js"></script>
         <script src="js/mask.js"></script>
-        <script src="js/back.js"></script>
+        <script src="js/back_button.js"></script>
         <script>
             $(function(){
                 $("#data_criacao").datepicker({

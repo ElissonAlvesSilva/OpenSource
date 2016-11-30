@@ -19,7 +19,7 @@ $RA = $registro->RA+1;
         <link href="css/datepicker.css" rel="stylesheet">
         <script src="js/html5shiv.min.js"></script>
         <script src="js/respond.min.js"></script>
-        <script src="js/back.js"></script>
+        <script src="js/back_button.js"></script>
 
         <script src="js/bootstrap-datepicker.js"></script>
         <script src="js/datepicker-pt-BR.js"></script>

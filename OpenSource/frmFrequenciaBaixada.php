@@ -5,7 +5,6 @@ $idTurma = isset($_GET['idTurma'])?$_GET['idTurma']:"";
 $data = isset($_GET['data'])?$_GET['data']:"";
 $date = str_replace('/', '-', $data);
 $data_frequencia = "'".date('Y-m-d', strtotime($date))."'";
-
 $fre = new \Frequencia\Models\Frequencia;
 $mat = new \Frequencia\Models\Materia;
 $turma = new \Frequencia\Models\Turma;
@@ -127,7 +126,7 @@ $frequencia = $fre->findByAnd('idTurma','Data_Frequencia',$idTurma,$data_frequen
                                 <label class="label-detail">Data da Frequência</label>
                                 <?php
                                     if(!empty($frequencia->Data_Frequencia))
-                                        echo '<p class="data">'.date('d/m/Y',strtotime($frequencia->Data_Frequencia)).'</p>';
+                                        echo '<p class="data">'.$data.'</p>';
                                 ?>
                             </div>
                             <div class="form-group col-xs-4 col-md-4">

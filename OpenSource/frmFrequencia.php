@@ -25,7 +25,7 @@
         <script src="js/bootstrap-datepicker.js"></script>
         <script src="js/datepicker-pt-BR.js"></script>
         <script src="js/mask.js"></script>
-        <script src="js/back.js"></script>
+        <script src="js/back_button.js"></script>
         <script>
             $(function(){
                 $("#data_freq").datepicker({
@@ -163,16 +163,21 @@ if(isset($_POST['cadastrar'])){
     $data = $_POST['data_criacao'];
     $date = str_replace('/', '-', $data);
     $data_frequencia = date('Y-m-d', strtotime($date));
+    echo '<input type="hidden" value='.$data.' id="frequencia_data"/>';
 
     if (move_uploaded_file($_FILES['arquivo']['tmp_name'], $uploadfile)){
         $arquivo_texto = file_get_contents($uploadfile);
 
 
 
-        $emails = explode(';', $arquivo_texto);
+        $ids = explode(';', $arquivo_texto);
 
-        foreach ($emails as $value) {
+        foreach ($ids as $value) {
+            if($value == ''){}
+                else if($value != ''){
+            
             gerarFrequenciaPresenca($value,$id,$data_frequencia);
+            }
         }
         gerarFalta($data_frequencia,$id);
         unlink($uploadfile);
@@ -209,9 +214,11 @@ if(isset($_POST['cadastrar'])){
 
 function gerarFrequenciaPresenca($value,$id,$data_frequencia){
     $frequencia = new \Frequencia\Models\Frequencia;
+    $al = new \Frequencia\Models\Aluno;
     $turma = new \Frequencia\Models\Turma_Aluno;
+    $aluno = $al->findByType('idBiometria',$value);
 
-    $turma = $turma->findByAndTypeAll('idAluno','idTurma',$value,$id);
+    $turma = $turma->findByAndTypeAll('idAluno','idTurma',$aluno->idAluno,$id);
 
     foreach ($turma as $item){
             $frequencia = $frequencia->create(
